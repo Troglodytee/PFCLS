@@ -1,5 +1,6 @@
 const popup_valid_delete = document.getElementById("popup-valid-delete");
 const continue_button = document.getElementById("continue-button");
+const confirm_area = document.getElementById("popup-confirm-delete");
 const player_avatar = document.getElementById("player-avatar");
 const avatar_bar = document.getElementById("avatar-bar");
 
@@ -106,9 +107,11 @@ window.addEventListener("load", () => {
         continue_button.style.display = "none"
         document.getElementById("new-button").textContent = "Jouer";
         fadeOutElement(popup_valid_delete);
+        fadeInElement(confirm_area);
     });
-    document.getElementById("cancel-delete").addEventListener("click", () => {fadeOutElement(popup_valid_delete);})
+    document.getElementById("cancel-delete").addEventListener("click", () => {fadeOutElement(popup_valid_delete);});
     updatePlayButtons();
+    document.getElementById("button-ok").addEventListener("click", () => {fadeOutElement(confirm_area);});
     document.getElementById("avatar-button").addEventListener("click", updateAvatarBar);
     for (let i = 0; i < characters.length; i++) {
         avatar_bar.children[i].firstElementChild.addEventListener("click", () => {
