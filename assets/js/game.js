@@ -86,8 +86,8 @@ function fight(choosen, placeholder, choosen2) {
         fadeInElement(fight_bg);
         moveTo(
             [
-                [player_symbol, (window.innerHeight-BIG_CIRCLE_SIZE)/2, 20],
-                [robot_symbol, (window.innerHeight-BIG_CIRCLE_SIZE)/2, window.innerWidth-20-BIG_CIRCLE_SIZE],
+                [player_symbol, (window.innerHeight-BIG_CIRCLE_SIZE)/2, window.innerWidth-20-BIG_CIRCLE_SIZE],
+                [robot_symbol, (window.innerHeight-BIG_CIRCLE_SIZE)/2, 20],
             ],
             n_frames
         );
@@ -152,7 +152,7 @@ function fight(choosen, placeholder, choosen2) {
                         }
                         wait = ANIMATION_FRAME_DURATION*n_frames;
                         if (attacker.id == "rock") {
-                            jump(attacker, victim, n_frames);
+                            slip(attacker, victim, n_frames);
                             setTimeout(() => {
                                 playSound(`${attacker.id}-${victim.id}`);
                                 fall(victim, n_frames);
@@ -165,15 +165,15 @@ function fight(choosen, placeholder, choosen2) {
                             if (victim.id == "spock") {
                                 setTimeout(() => {
                                     playSound(`${attacker.id}-${victim.id}`);
-                                    pushBack(victim, win, n_frames/2);
+                                    pushBack(victim, 1-win, n_frames/2);
                                 }, wait);
                             }
                             else {playSound(`${attacker.id}-${victim.id}`);}
                             wait *= 2;
                         }
                         else if (attacker.id == "scissor") {
-                            if (win) {rotation(attacker, 90, n_frames, n_frames);}
-                            else {rotation(attacker, -90, n_frames, n_frames);}
+                            if (win) {rotation(attacker, -90, n_frames, n_frames);}
+                            else {rotation(attacker, 90, n_frames, n_frames);}
                             setTimeout(() => {
                                 playSound(`${attacker.id}-${victim.id}`);
                                 slip(attacker, victim, n_frames);

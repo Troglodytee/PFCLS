@@ -37,15 +37,6 @@ function slip(attacker, victim, n) {
     }
 }
 
-function jump(attacker, victim, n) { ////////
-    if (n > 0) {
-        let rect = attacker.getBoundingClientRect();
-        let rect2 = victim.getBoundingClientRect();
-        attacker.style.left = (rect.left+(rect2.left-rect.left)/n)+"px";
-        setTimeout(() => {jump(attacker, victim, n-1)}, ANIMATION_FRAME_DURATION);
-    }
-}
-
 function pushBack(element, side, n) {
     if (n > 0) {
         let rect = element.getBoundingClientRect();
