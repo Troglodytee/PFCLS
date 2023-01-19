@@ -17,8 +17,11 @@ function waitIntroEnd() {
 }
 
 function updateOnOff() {
+    console.log(sounds);
     if (music) {music_object.muted = false;}
     else {music_object.muted = true;}
+    if (sounds) {sounds_object.muted = false;}
+    else {sounds_object.muted = true;}
 }
 
 function updateSounds() {
@@ -62,6 +65,7 @@ window.addEventListener("load", () => {
         if (sounds) {sounds = 0;}
         else {sounds = 1;}
         localStorage.setItem("sounds", sounds.toString());
+        updateOnOff();
         updateSounds();
     });
     updateOnOff();

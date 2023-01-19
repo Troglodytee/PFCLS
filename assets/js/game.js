@@ -126,6 +126,7 @@ function fight(choosen, placeholder, choosen2) {
             right_sword.append(img);
             document.body.append(left_sword, right_sword);
             rotateToCenter(left_sword, right_sword, 30, 25);
+            playSound("swords");
             setTimeout(() => {
                 fadeOutElement(left_sword);
                 fadeOutElement(right_sword);
