@@ -70,6 +70,8 @@
     text-decoration: none;
 }
 
+body {overflow: hidden;}
+
 main {gap: var(--spacing);}
 
 .button {
@@ -122,7 +124,6 @@ main {gap: var(--spacing);}
     position: absolute;
     left: 0;
     top: 0;
-    background-color: var(--transparent-grey);
 }
 
 .popup-message {

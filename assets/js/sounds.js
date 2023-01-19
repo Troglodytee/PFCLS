@@ -1,12 +1,12 @@
 function playIntro() {
-    music_object.src = "assets/sounds/intro.mp3";
+    music_object.src = "assets/musics/intro.mp3";
     music_object.play();
     waitIntroEnd();
 }
 
 function playAmbiance() {
-    if (skype) {music_object.src = "assets/sounds/skype.mp3";}
-    else {music_object.src = "assets/sounds/ambiance.mp3";}
+    if (skype) {music_object.src = "assets/musics/skype.mp3";}
+    else {music_object.src = "assets/musics/ambiance.mp3";}
     music_object.loop = true;
     music_object.play();
 }

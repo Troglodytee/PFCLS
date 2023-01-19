@@ -1,6 +1,4 @@
-h1 {
-    -webkit-text-stroke: 1px var(--black);
-}
+h1 {-webkit-text-stroke: 1px var(--black);}
 
 .responses {
     width: 100%;
@@ -27,7 +25,7 @@ h1 {
 
 @keyframes hidden {
     from {opacity: 0;}
-    to {opacity: 0.015;}
+    to {opacity: 0.02;}
 }
 
 @keyframes deploy {

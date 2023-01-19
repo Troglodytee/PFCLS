@@ -7,7 +7,8 @@
     --red:    #df1313;
     --white:  #ffffff;
     --yellow: #ffc400;
-    --transparent-grey: #00000088;
+    --transparent-black: #00000088;
+    --transparent-white: #ffffff88;
 }
 
 .bg-beige  {background-color: var(--beige);}
@@ -19,7 +20,11 @@
 .bg-white  {background-color: var(--white);}
 .bg-yellow {background-color: var(--yellow);}
 
+.bg-t-black {background-color: var(--transparent-black);}
+.bg-t-white {background-color: var(--transparent-white);}
+
 .border-black {border-color: var(--black);}
 
 .text-black {color: var(--black);}
+.text-red   {color: var(--red);}
 .text-white {color: var(--white);}
