@@ -219,8 +219,10 @@ function showEndArea() {
     else {victory_ratio.textContent = `Vous avez un taux de ${(n_victories/(n_victories+n_defeats)*100).toFixed(3)}% de victoires (${n_victories} victoires et ${n_defeats} défaites)`;}
 }
 
+getData();
+
 window.addEventListener("load", () => {
-    getData();
+    localStorage.setItem("screen", "1");
     resize();
     document.getElementById("player-avatar").src = `assets/img/player/${avatar}.svg`;
     updateGameIndicators();

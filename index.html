@@ -9,24 +9,33 @@
     <link href="assets/css/global_effects.css" rel="stylesheet">
     <link href="assets/css/home.css" rel="stylesheet">
 
-    <script src="assets/js/sounds.js" async></script>
-    <script src="assets/js/constants.js" async></script>
-    <script src="assets/js/local_storage.js" async></script>
-    <script src="assets/js/tools.js" async></script>
-    <script src="assets/js/rules.js" async></script>
-    <script src="assets/js/home.js" async></script>
+    <script src="assets/js/constants.js"></script>
+    <script src="assets/js/local_storage.js"></script>
+    <script src="assets/js/tools.js"></script>
+    <script src="assets/js/rules.js" defer></script>
+    <script src="assets/js/home.js" defer></script>
+    <script src="assets/js/sounds.js" defer></script>
 
     <title>PFCLS</title>
 </head>
 
 <body>
     <main class="fullscreen center-all bg-yellow">
-        <div id="delete-button" class="top-left-button small-circle border border-black bg-white clickable">
-            <img class="w-100" src="assets/img/trash.svg">
+        <div class="top-left-button top-left-buttons">
+            <div id="delete-button" class="small-circle border border-black bg-white clickable">
+                <img class="w-100" src="assets/img/trash.svg">
+            </div>
+            <div id="delete-button" class="small-circle border border-black bg-white clickable">
+                <img id="music-button" class="w-100" src="assets/img/sounds/music-on.svg">
+            </div>
+            <div id="delete-button" class="small-circle border border-black bg-white clickable">
+                <img id="sounds-button" class="w-100" src="assets/img/sounds/sounds-on.svg">
+            </div>
         </div>
         <div id="rules-button" class="top-right-button small-circle border border-black bg-white clickable">
             <img class="w-100" src="assets/img/rules.svg">
         </div>
+        <div id="skype-button" class="bottom-left-button small-circle easter-egg bg-blue"></div>
         <div class="bottom-right-button">
             <div id="avatar-bar" class="avatar-bar border border-black bg-white">
                 <div class="small-circle border border-black bg-white clickable">

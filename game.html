@@ -9,22 +9,31 @@
     <link href="assets/css/global_effects.css" rel="stylesheet">
     <link href="assets/css/game.css" rel="stylesheet">
 
-    <script src="assets/js/constants.js" async></script>
-    <script src="assets/js/local_storage.js" async></script>
-    <script src="assets/js/tools.js" async></script>
-    <script src="assets/js/rules.js" async></script>
-    <script src="assets/js/game.js" async></script>
+    <script src="assets/js/constants.js"></script>
+    <script src="assets/js/local_storage.js"></script>
+    <script src="assets/js/tools.js"></script>
+    <script src="assets/js/rules.js" defer></script>
+    <script src="assets/js/game.js" defer></script>
+    <script src="assets/js/sounds.js" defer></script>
 
     <title>PFCLS</title>
 </head>
 
 <body>
     <main class="fullscreen center-all bg-yellow">
-        <a class="top-left-button" href="index.html">
-            <div class="small-circle border border-black bg-white clickable">
-                <img class="w-100" src="assets/img/home.svg">
+        <div class="top-left-button top-left-buttons">
+            <a href="index.html">
+                <div class="small-circle border border-black bg-white clickable">
+                    <img class="w-100" src="assets/img/home.svg">
+                </div>
+            </a>
+            <div id="delete-button" class="small-circle border border-black bg-white clickable">
+                <img id="music-button" class="w-100" src="assets/img/sounds/music-on.svg">
             </div>
-        </a>
+            <div id="delete-button" class="small-circle border border-black bg-white clickable">
+                <img id="sounds-button" class="w-100" src="assets/img/sounds/sounds-on.svg">
+            </div>
+        </div>
         <div id="rules-button" class="top-right-button small-circle border border-black bg-white clickable">
             <img class="w-100" src="assets/img/rules.svg">
         </div>

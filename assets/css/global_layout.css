@@ -95,10 +95,21 @@ main {gap: var(--spacing);}
     right: 10px;
 }
 
+.bottom-left-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
 .bottom-right-button {
     position: absolute;
     bottom: 10px;
     right: 10px;
+}
+
+.top-left-buttons {
+    display: flex;
+    gap: var(--spacing);
 }
 
 .over-all {

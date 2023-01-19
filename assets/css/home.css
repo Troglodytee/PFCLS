@@ -23,6 +23,13 @@ h1 {
     overflow: hidden;
 }
 
+.easter-egg {animation: hidden 1s infinite alternate;}
+
+@keyframes hidden {
+    from {opacity: 0;}
+    to {opacity: 0.015;}
+}
+
 @keyframes deploy {
     from {height: 0px;}
     to {height: 350px;}

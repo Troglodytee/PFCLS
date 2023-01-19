@@ -82,12 +82,16 @@ function updateAvatarBar() {
     }
 }
 
+getData();
+
 window.addEventListener("load", () => {
-    getData();
+    localStorage.setItem("screen", "0");
+    
     document.getElementById("delete-button").addEventListener("click", () => {fadeInElement(popup_valid_delete);})
     document.getElementById("valid-delete").addEventListener("click", () => {
         deleteData();
         updateAvatar();
+        updateSounds();
         continue_button.style.display = "none"
         document.getElementById("new-button").textContent = "Jouer";
         fadeOutElement(popup_valid_delete);

@@ -6,6 +6,7 @@ var player_score;
 var avatar;
 var music;
 var sounds;
+var skype;
 
 function getData() {
     if (localStorage.getItem("n_victories") == null) {
@@ -14,6 +15,7 @@ function getData() {
         avatar = "sheldon";
         music = 1;
         sounds = 1;
+        skype = 0;
     }
     else {
         n_victories = parseInt(localStorage.getItem("n_victories"));
@@ -21,6 +23,7 @@ function getData() {
         avatar = localStorage.getItem("avatar");
         music = parseInt(localStorage.getItem("music"));
         sounds = parseInt(localStorage.getItem("sounds"));
+        skype = parseInt(localStorage.getItem("skype"));
     }
     if (localStorage.getItem("n_rounds") == null) {
         n_rounds = 1;
@@ -44,6 +47,9 @@ function saveData() {
         localStorage.setItem("player_score", player_score.toString());
     }
     localStorage.setItem("avatar", avatar);
+    localStorage.setItem("music", music.toString());
+    localStorage.setItem("sounds", sounds.toString());
+    localStorage.setItem("skype", skype.toString());
 }
 
 function deleteData() {
@@ -53,5 +59,10 @@ function deleteData() {
     robot_score = 0;
     player_score = 0;
     avatar = "sheldon";
+    music = 1;
+    sounds = 1;
+    skype = 0;
+    let screen = localStorage.getItem("screen");
     localStorage.clear();
+    localStorage.setItem("screen", screen);
 }
