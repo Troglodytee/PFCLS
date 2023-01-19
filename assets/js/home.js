@@ -86,12 +86,12 @@ getData();
 
 window.addEventListener("load", () => {
     localStorage.setItem("screen", "0");
-    
     document.getElementById("delete-button").addEventListener("click", () => {fadeInElement(popup_valid_delete);})
     document.getElementById("valid-delete").addEventListener("click", () => {
         deleteData();
         updateAvatar();
         updateSounds();
+        playAmbiance();
         continue_button.style.display = "none"
         document.getElementById("new-button").textContent = "Jouer";
         fadeOutElement(popup_valid_delete);
