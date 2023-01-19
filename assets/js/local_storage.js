@@ -1,3 +1,7 @@
+/*
+    A file which contains the code for the local storage
+*/
+
 var characters = ["sheldon", "leonard", "howard", "raj"];
 var scores = {};
 var avatar;
@@ -6,6 +10,7 @@ var sounds;
 var skype;
 var screen;
 
+// Get local storage data
 function getData() {
     for (i of characters) {
         scores[i] = localStorage.getItem(i);
@@ -28,6 +33,7 @@ function getData() {
     else {skype = parseInt(skype);}
 }
 
+// Save data on local storage
 function saveData() {
     localStorage.clear();
     for (i of characters) {localStorage.setItem(i, scores[i].join(" ")); console.log(i);}
@@ -37,6 +43,7 @@ function saveData() {
     localStorage.setItem("skype", skype.toString());
 }
 
+// Delete data off a character
 function deleteData() {
     localStorage.removeItem(avatar);
     scores[avatar] = [0, 0, 1, 0, 0];

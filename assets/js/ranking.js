@@ -1,3 +1,7 @@
+/*
+    A file which contains the ranking popup interactions
+*/
+
 const ranking_area = document.getElementById("ranking-area");
 document.getElementById("ranking-button").addEventListener("click", () => {
     computeRanking();
@@ -14,6 +18,7 @@ function resizeRanking() {
     ranking_close_button.style.right = ((window.innerWidth-rect.width)/2+SPACING)+"px";
 }
 
+// Compute the ranking
 function computeRanking() {
     ranking_score_section.innerHTML = "";
     let ratio = {};

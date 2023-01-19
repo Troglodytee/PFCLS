@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Set the authors -->
     <meta name="author" content="Thomas Baricault, Constantion Egloff, Clément Devaux">
 
+    <!-- Link stylesheets -->
     <link href="assets/css/global_layout.css" rel="stylesheet">
     <link href="assets/css/global_effects.css" rel="stylesheet">
     <link href="assets/css/game.css" rel="stylesheet">
 
+    <!-- Link Javascript -->
     <script src="assets/js/constants.js"></script>
     <script src="assets/js/local_storage.js"></script>
     <script src="assets/js/animations.js"></script>
@@ -19,47 +22,67 @@
     <script src="assets/js/game.js" defer></script>
     <script src="assets/js/sounds.js" defer></script>
 
+    <!-- Add the favicon -->
     <link rel="icon" type="vector/svg" href="assets/img/atom.svg">
 
+    <!-- Add the description -->
     <meta name="description" content="Le site du jeu Pierre-Feuille-Ciseaux-Lézard-Spock venant de la série Big Bang Theory">
 
+    <!-- Allow robots to index the page -->
     <meta name="robots" content="index, follow">
 
+    <!-- Set the page title -->
     <title>Jeu - PFCLS</title>
 </head>
 
 <body>
+    <!-- Main -->
     <main class="fullscreen center-all bg-yellow">
+        <!-- Top left buttons bar -->
         <div class="top-left-button button-bar">
+            <!-- Home button -->
             <a href="index.html">
                 <div class="small-circle border border-black bg-white clickable">
                     <img class="w-100" src="assets/img/home.svg">
                 </div>
             </a>
+            <!-- Mute music button -->
             <div id="delete-button" class="small-circle border border-black bg-white clickable">
                 <img id="music-button" class="w-100" src="assets/img/sounds/music-on.svg">
             </div>
+            <!-- Mute sounds button -->
             <div id="delete-button" class="small-circle border border-black bg-white clickable">
                 <img id="sounds-button" class="w-100" src="assets/img/sounds/sounds-on.svg">
             </div>
         </div>
+
+        <!-- Top right buttons bar -->
         <div class="top-right-button button-bar">
+            <!-- Ranking button -->
             <div id="ranking-button" class="small-circle border border-black bg-white clickable">
                 <img class="w-100" src="assets/img/podium.svg">
             </div>
+            <!-- Rules button -->
             <div id="rules-button" class="small-circle border border-black bg-white clickable">
                 <img class="w-100" src="assets/img/rules.svg">
             </div>
         </div>
+
+        <!-- Round counter text -->
         <p id="round-counter" class="fs-lg text-center text-black"></p>
         <div class="play-area">
+            <!-- Robot avatar and score -->
             <div class="player player-left">
+                <!-- Avatar -->
                 <div class="circle border border-black bg-white">
                     <img id="robot-avatar" class="w-100" src="assets/img/robot/normal.svg">
                 </div>
+                <!-- Score -->
                 <p id="robot-score" class="score border border-black bg-white fs-md text-center text-black"></p>
             </div>
+            <!-- Table -->
             <div class="table border border-black bg-brown">
+                <!-- Robot selection -->
                 <div class="big-circle border border-black bg-white">
                     <div id="robot-choice" class="robot-choice">
                         <img class="w-100" src="assets/img/symbols/rock.svg">
@@ -70,17 +93,22 @@
                         <img class="w-100" src="assets/img/symbols/rock.svg">
                     </div>
                 </div>
+                <!-- Player selection -->
                 <div id="player-choice" class="center-all big-circle border border-black bg-white clickable">
                     <p class="fs-xl text-black">?</p>
                 </div>
             </div>
+            <!-- Player avatar and score -->
             <div class="player player-right">
+                <!-- Avatar -->
                 <div class="circle border border-black bg-white">
                     <img id="player-avatar" class="w-100" src="assets/img/player/sheldon.svg">
                 </div>
+                <!-- Score -->
                 <p id="player-score" class="score border border-black bg-white fs-md text-center text-black"></p>
             </div>
         </div>
+        <!-- Choices bar -->
         <div id="choices-area" class="choices-area">
             <div class="circle border border-black bg-white clickable">
                 <img id="rock" class="w-100" src="assets/img/symbols/rock.svg">
@@ -98,18 +126,27 @@
                 <img id="spock" class="w-100" src="assets/img/symbols/spock.svg">
             </div>
         </div>
+
+        <!-- End message popup -->
         <div id="end-area" class="popup fullscreen center-all bg-t-black">
             <div class="popup-message bg-beige">
                 <p id="victory-text" class="fs-lg text-black"></p>
                 <p id="victory-ratio" class="text-black"></p>
+                <!-- Rematch button -->
                 <a id="rematch-button" class="button bg-green fs-md text-spaced text-white clickable">Rejouer</a>
+                <!-- Ranking button -->
                 <a id="open-ranking" class="button bg-blue fs-md text-spaced text-white clickable">Classement</a>
+                <!-- Return to home button -->
                 <a class="button bg-red fs-md text-spaced text-white clickable" href="index.html">Revenir à l'accueil</a>
             </div>
         </div>
+        
+        <!-- Rules popup -->
         <div id="rules-area" class="popup fullscreen center-all bg-t-black">
             <div class="rules-area popup-message bg-beige overflow-scroll">
+                <!-- Close button -->
                 <img id="rules-close" class="close-button clickable" src="assets/img/cross.svg">
+                <!-- Symbols descriptions -->
                 <div class="col">
                     <div class="row">
                         <img src="assets/img/symbols/rock.svg" class="symbol">
@@ -152,18 +189,26 @@
                         </div>
                     </div>
                 </div>
+                <!-- Schema -->
                 <div class="col">
                     <img class="w-100" src="assets/img/schema.svg">
                 </div>
             </div>
         </div>
+
+        <!-- Ranking popup -->
         <div id="ranking-area" class="popup fullscreen center-all bg-t-black">
             <div class="popup-message bg-beige overflow-scroll">
+                <!-- Close button -->
                 <img id="ranking-close" class="close-button clickable" src="assets/img/cross.svg">
+                <!-- Title -->
                 <p class="fs-lg text-center text-black">Classement</p>
+                <!-- Character scores section -->
                 <div id="ranking-scores-section" class="col"></div>
             </div>
         </div>
+
+        <!-- Symbols fight background -->
         <div id="fight-bg" class="popup fullscreen bg-t-white"></div>
     </main>
 </body>

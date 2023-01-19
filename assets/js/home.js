@@ -1,3 +1,7 @@
+/*
+    A file which contains the code for the home page
+*/
+
 const popup_valid_delete = document.getElementById("popup-valid-delete");
 const continue_button = document.getElementById("continue-button");
 const confirm_area = document.getElementById("popup-confirm-delete");

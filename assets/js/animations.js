@@ -1,13 +1,20 @@
+/*
+    A file which contains usefull animations for both pages of the site
+*/
+
+// Fade in animation
 function fadeInElement(element) {
     element.style.display = "flex";
     element.style.animation = `fade-in ${FADE_DURATION/1000}s`;
 }
 
+// Fade out animation
 function fadeOutElement(element) {
     element.style.animation = `fade-out ${FADE_DURATION/1000}s`;
     setTimeout(() => {element.style.display = "none";}, FADE_DURATION);
 }
 
+// Move objects to positions animation
 function moveTo(objects, n) {
     if (n > 0) {
         for (i of objects) {
@@ -21,6 +28,7 @@ function moveTo(objects, n) {
     }
 }
 
+// Symbol rotation animation
 function rotation(element, angle, n, i) {
     if (i > 0) {
         element.style.transform = `rotate(${angle/n*(n-i)}deg)`;
@@ -28,6 +36,7 @@ function rotation(element, angle, n, i) {
     }
 }
 
+// Symbol slip animation
 function slip(attacker, victim, n) {
     if (n > 0) {
         let rect = attacker.getBoundingClientRect();
@@ -37,6 +46,7 @@ function slip(attacker, victim, n) {
     }
 }
 
+// Symbol push back animation
 function pushBack(element, side, n) {
     if (n > 0) {
         let rect = element.getBoundingClientRect();
@@ -46,6 +56,7 @@ function pushBack(element, side, n) {
     }
 }
 
+// Symbol fall animation
 function fall(element, n) {
     if (n > 0) {
         let rect = element.getBoundingClientRect();

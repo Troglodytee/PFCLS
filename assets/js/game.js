@@ -1,3 +1,7 @@
+/*
+    A file which contains the code for the game page
+*/
+
 const round_counter = document.getElementById("round-counter");
 const robot_score_indicator = document.getElementById("robot-score");
 const player_score_indicator = document.getElementById("player-score");

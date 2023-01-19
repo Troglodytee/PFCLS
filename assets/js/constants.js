@@ -1,3 +1,7 @@
+/*
+    A file which contains the constants for the site
+*/
+
 const SPACING = 20;
 const CIRCLE_SIZE = 100;
 const BIG_CIRCLE_SIZE = 150;

@@ -1,3 +1,7 @@
+/*
+    A file which contains the rules popup interactions
+*/
+
 const rules_area = document.getElementById("rules-area");
 document.getElementById("rules-button").addEventListener("click", () => {fadeInElement(rules_area); resizeRules();})
 const rules_close_button = document.getElementById("rules-close")
