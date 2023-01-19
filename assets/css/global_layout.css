@@ -49,6 +49,8 @@
 
 .w-100 {width: 100%;}
 
+.overflow-scroll {overflow-y: scroll;}
+
 .fullscreen {
     width: 100vw;
     height: 100vh;
@@ -109,7 +111,7 @@ main {gap: var(--spacing);}
     right: 10px;
 }
 
-.top-left-buttons {
+.button-bar {
     display: flex;
     gap: var(--spacing);
 }
@@ -173,7 +175,6 @@ main {gap: var(--spacing);}
     .rules-area {
         flex-direction: column-reverse;
         max-height: 90vh;
-        overflow-y: scroll;
     }
 }
 

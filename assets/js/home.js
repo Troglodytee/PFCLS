@@ -70,6 +70,17 @@ function deploy() {
     }
 }
 
+function updatePlayButtons() {
+    if (scores[avatar][2] == 1) {
+        continue_button.style.display = "none";
+        document.getElementById("new-button").textContent = "Jouer";
+    }
+    else {
+        continue_button.style.display = "block";
+        document.getElementById("new-button").textContent = "Nouvelle partie";
+    }
+}
+
 function updateAvatarBar() {
     if (avatar_bar_deploy) {
         retract();
@@ -85,7 +96,7 @@ function updateAvatarBar() {
 getData();
 
 window.addEventListener("load", () => {
-    localStorage.setItem("screen", "0");
+    screen = 0;
     document.getElementById("delete-button").addEventListener("click", () => {fadeInElement(popup_valid_delete);})
     document.getElementById("valid-delete").addEventListener("click", () => {
         deleteData();
@@ -97,23 +108,15 @@ window.addEventListener("load", () => {
         fadeOutElement(popup_valid_delete);
     });
     document.getElementById("cancel-delete").addEventListener("click", () => {fadeOutElement(popup_valid_delete);})
-    if (n_rounds == 1) {
-        continue_button.style.display = "none";
-        document.getElementById("new-button").textContent = "Jouer";
-    }
-    else {document.getElementById("new-button").addEventListener("click", () => {
-        localStorage.removeItem("n_rounds");
-        localStorage.removeItem("robot_score");
-        localStorage.removeItem("player_score");
-    });}
+    updatePlayButtons();
     document.getElementById("avatar-button").addEventListener("click", updateAvatarBar);
-    let avatars = ["sheldon", "leonard", "howard", "raj"];
-    for (let i = 0; i < avatars.length; i++) {
+    for (let i = 0; i < characters.length; i++) {
         avatar_bar.children[i].firstElementChild.addEventListener("click", () => {
-            avatar = avatars[i];
+            avatar = characters[i];
             localStorage.setItem("avatar", avatar);
             updateAvatar();
             updateAvatarBar();
+            updatePlayButtons();
         })
     }
     updateAvatar();

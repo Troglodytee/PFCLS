@@ -15,6 +15,7 @@
     <script src="assets/js/local_storage.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/rules.js" defer></script>
+    <script src="assets/js/ranking.js" defer></script>
     <script src="assets/js/game.js" defer></script>
     <script src="assets/js/sounds.js" defer></script>
 
@@ -29,7 +30,7 @@
 
 <body>
     <main class="fullscreen center-all bg-yellow">
-        <div class="top-left-button top-left-buttons">
+        <div class="top-left-button button-bar">
             <a href="index.html">
                 <div class="small-circle border border-black bg-white clickable">
                     <img class="w-100" src="assets/img/home.svg">
@@ -42,8 +43,13 @@
                 <img id="sounds-button" class="w-100" src="assets/img/sounds/sounds-on.svg">
             </div>
         </div>
-        <div id="rules-button" class="top-right-button small-circle border border-black bg-white clickable">
-            <img class="w-100" src="assets/img/rules.svg">
+        <div class="top-right-button button-bar">
+            <div id="ranking-button" class="small-circle border border-black bg-white clickable">
+                <img class="w-100" src="assets/img/podium.svg">
+            </div>
+            <div id="rules-button" class="small-circle border border-black bg-white clickable">
+                <img class="w-100" src="assets/img/rules.svg">
+            </div>
         </div>
         <p id="round-counter" class="fs-lg text-center text-black"></p>
         <div class="play-area">
@@ -93,15 +99,16 @@
             </div>
         </div>
         <div id="end-area" class="popup fullscreen center-all bg-t-black">
-            <div class="popup-message bg-beige">
+            <div class="popup-message bg-beige overflow-scroll">
                 <p id="victory-text" class="fs-lg text-black"></p>
                 <p id="victory-ratio" class="text-black"></p>
                 <a id="rematch-button" class="button bg-green fs-md text-spaced text-white clickable">Rejouer</a>
+                <a id="open-ranking" class="button bg-blue fs-md text-spaced text-white clickable">Classement</a>
                 <a class="button bg-red fs-md text-spaced text-white clickable" href="index.html">Revenir à l'accueil</a>
             </div>
         </div>
         <div id="rules-area" class="popup fullscreen center-all bg-t-black">
-            <div class="rules-area popup-message bg-beige">
+            <div class="rules-area popup-message bg-beige overflow-scroll">
                 <img id="rules-close" class="close-button clickable" src="assets/img/cross.svg">
                 <div class="col">
                     <div class="row">
@@ -148,6 +155,13 @@
                 <div class="col">
                     <img class="w-100" src="assets/img/schema.svg">
                 </div>
+            </div>
+        </div>
+        <div id="ranking-area" class="popup fullscreen center-all bg-t-black">
+            <div class="popup-message bg-beige overflow-scroll">
+                <img id="ranking-close" class="close-button clickable" src="assets/img/cross.svg">
+                <p class="fs-lg text-center text-black">Classement</p>
+                <div id="ranking-scores-section" class="col"></div>
             </div>
         </div>
         <div id="fight-bg" class="popup fullscreen bg-t-white"></div>

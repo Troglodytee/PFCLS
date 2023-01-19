@@ -2,9 +2,12 @@
     --beige:  #fad797;
     --black:  #000000;
     --blue:   #0099ff;
+    --bronze: #b94008;
     --brown:  #8f5e05;
+    --gold:   #ffe609;
     --green:  #23c223;
     --red:    #df1313;
+    --silver: #aaaaaa;
     --white:  #ffffff;
     --yellow: #ffc400;
     --transparent-black: #00000088;
@@ -25,6 +28,9 @@
 
 .border-black {border-color: var(--black);}
 
-.text-black {color: var(--black);}
-.text-red   {color: var(--red);}
-.text-white {color: var(--white);}
+.text-black  {color: var(--black);}
+.text-bronze {color: var(--bronze);}
+.text-gold   {color: var(--gold);}
+.text-red    {color: var(--red);}
+.text-silver {color: var(--silver);}
+.text-white  {color: var(--white);}

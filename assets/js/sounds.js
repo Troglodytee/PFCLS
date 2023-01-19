@@ -17,7 +17,6 @@ function waitIntroEnd() {
 }
 
 function updateOnOff() {
-    console.log(sounds);
     if (music) {music_object.muted = false;}
     else {music_object.muted = true;}
     if (sounds) {sounds_object.muted = false;}
@@ -69,6 +68,6 @@ window.addEventListener("load", () => {
         updateSounds();
     });
     updateOnOff();
-    if (localStorage.getItem("screen") == "0") {playIntro();}
-    else {playAmbiance();}
+    if (screen) {playAmbiance();}
+    else {playIntro();}
 })

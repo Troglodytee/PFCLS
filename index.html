@@ -15,6 +15,7 @@
     <script src="assets/js/local_storage.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/rules.js" defer></script>
+    <script src="assets/js/ranking.js" defer></script>
     <script src="assets/js/home.js" defer></script>
     <script src="assets/js/sounds.js" defer></script>
 
@@ -29,7 +30,7 @@
 
 <body>
     <main class="fullscreen center-all bg-yellow">
-        <div class="top-left-button top-left-buttons">
+        <div class="top-left-button button-bar">
             <div id="delete-button" class="small-circle border border-black bg-white clickable">
                 <img class="w-100" src="assets/img/trash.svg">
             </div>
@@ -40,8 +41,13 @@
                 <img id="sounds-button" class="w-100" src="assets/img/sounds/sounds-on.svg">
             </div>
         </div>
-        <div id="rules-button" class="top-right-button small-circle border border-black bg-white clickable">
-            <img class="w-100" src="assets/img/rules.svg">
+        <div class="top-right-button button-bar">
+            <div id="ranking-button" class="small-circle border border-black bg-white clickable">
+                <img class="w-100" src="assets/img/podium.svg">
+            </div>
+            <div id="rules-button" class="small-circle border border-black bg-white clickable">
+                <img class="w-100" src="assets/img/rules.svg">
+            </div>
         </div>
         <div id="skype-button" class="bottom-left-button small-circle easter-egg bg-blue"></div>
         <div class="bottom-right-button">
@@ -71,7 +77,7 @@
         <a id="new-button" class="button bg-red fs-lg text-white" href="game.html">Nouvelle partie</a>
         <div id="popup-valid-delete" class="popup fullscreen center-all bg-t-black">
             <div class="popup-message bg-beige">
-                <p class="fs-md text-center text-black">Voulez-vous vraiment supprimer votre sauvegarde ?</p>
+                <p class="fs-md text-center text-black">Voulez-vous vraiment supprimer les données de ce personnage ?</p>
                 <div class="responses">
                     <a id="valid-delete" class="button bg-green fs-md text-white clickable">Oui</a>
                     <a id="cancel-delete" class="button bg-red fs-md text-white clickable">Non</a>
@@ -79,7 +85,7 @@
             </div>
         </div>
         <div id="rules-area" class="popup fullscreen center-all bg-t-black">
-            <div class="rules-area popup-message bg-beige">
+            <div class="rules-area popup-message bg-beige overflow-scroll">
                 <img id="rules-close" class="close-button clickable" src="assets/img/cross.svg">
                 <div class="col">
                     <div class="row">
@@ -126,6 +132,13 @@
                 <div class="col">
                     <img class="w-100" src="assets/img/schema.svg">
                 </div>
+            </div>
+        </div>
+        <div id="ranking-area" class="popup fullscreen center-all bg-t-black">
+            <div class="popup-message bg-beige overflow-scroll">
+                <img id="ranking-close" class="close-button clickable" src="assets/img/cross.svg">
+                <p class="fs-lg text-center text-black">Classement</p>
+                <div id="ranking-scores-section" class="col"></div>
             </div>
         </div>
     </main>

@@ -68,24 +68,20 @@ function fight(choosen, placeholder, choosen2) {
         let player_symbol = choosen.cloneNode();
         let robot_symbol = robot_choice.children[5-choosen2].cloneNode();
         robot_symbol.id = symbols[choosen2];
-
         let rect = choosen.getBoundingClientRect();
         player_symbol.style.position = "absolute";
         player_symbol.style.top = rect.top+"px";
         player_symbol.style.left = rect.left+"px";
         player_symbol.style.width = BIG_CIRCLE_SIZE+"px";
         document.body.append(player_symbol);
-
         rect = robot_choice.parentElement.getBoundingClientRect();
         robot_symbol.style.position = "absolute";
         robot_symbol.style.top = (rect.top+SPACING)+"px";
         robot_symbol.style.left = (rect.left+SPACING)+"px";
         robot_symbol.style.width = BIG_CIRCLE_SIZE+"px";
         document.body.append(robot_symbol);
-
         choosen.style.display = "none";
         robot_choice.style.display = "none";
-
         let n_frames = 20;
         fadeInElement(fight_bg);
         moveTo(
@@ -147,12 +143,12 @@ function fight(choosen, placeholder, choosen2) {
                         if (win) {
                             attacker = player_symbol;
                             victim = robot_symbol;
-                            player_score++;
+                            scores[avatar][4]++;
                         }
                         else {
                             attacker = robot_symbol;
                             victim = player_symbol;
-                            robot_score++;
+                            scores[avatar][3]++;
                         }
                         wait = ANIMATION_FRAME_DURATION*n_frames;
                         if (attacker.id == "rock") {
@@ -203,14 +199,16 @@ function fight(choosen, placeholder, choosen2) {
                         fadeOutElement(player_symbol);
                         fadeOutElement(robot_symbol);
                         setTimeout(() => {
-                            if (n_rounds == 10) {
+                            if (scores[avatar][2] == 10) {
                                 updateGameIndicators();
-                                n_rounds++;
                                 showEndArea();
+                                scores[avatar][2] = 1;
+                                scores[avatar][3] = 0;
+                                scores[avatar][4] = 0;
                             }
                             else {
                                 updateRobotAvatar();
-                                n_rounds++;
+                                scores[avatar][2]++;
                                 updateGameIndicators();
                                 startRandomize();
                             }
@@ -338,23 +336,14 @@ function startRandomize() {
     randomizeRobotChoice();
 }
 
-function startNewGame() {
-    n_rounds = 1;
-    robot_score = 0;
-    player_score = 0;
-    updateRobotAvatar();
-    updateGameIndicators();
-    startRandomize();
-}
-
 function updateGameIndicators() {
-    round_counter.textContent = `Manche ${n_rounds}/10`;
-    robot_score_indicator.textContent = robot_score.toString();
-    player_score_indicator.textContent = player_score.toString();
+    round_counter.textContent = `Manche ${scores[avatar][2]}/10`;
+    robot_score_indicator.textContent = scores[avatar][3].toString();
+    player_score_indicator.textContent = scores[avatar][4].toString();
 }
 
 function updateRobotAvatar() {
-    let diff = player_score-robot_score;
+    let diff = scores[avatar][4]-scores[avatar][3];
     if (-10 <= diff && diff <= -4) {robot_avatar.src = "assets/img/robot/happy.svg";}
     else if (-3 <= diff && diff <= -2) {robot_avatar.src = "assets/img/robot/amused.svg";}
     else if (-1 <= diff && diff <= 1) {robot_avatar.src = "assets/img/robot/normal.svg";}
@@ -364,37 +353,44 @@ function updateRobotAvatar() {
 
 function showEndArea() {
     fadeInElement(end_area);
-    if (player_score == robot_score) {
+    if (scores[avatar][4] == scores[avatar][3]) {
         victory_text.textContent = "Egalité...";
         robot_avatar.src = "assets/img/robot/normal.svg";
     }
-    else if (player_score > robot_score) {
-        victory_text.textContent = `Vous avez gagné ! (${player_score} - ${robot_score})`;
-        n_victories++;
+    else if (scores[avatar][4] > scores[avatar][3]) {
+        victory_text.textContent = `Vous avez gagné ! (${scores[avatar][4]} - ${scores[avatar][3]})`;
+        scores[avatar][0]++;
         robot_avatar.src = "assets/img/robot/angry.svg";
     }
     else {
-        victory_text.textContent = `Vous avez perdu... (${player_score} - ${robot_score})`;
-        n_defeats++;
+        victory_text.textContent = `Vous avez perdu... (${scores[avatar][4]} - ${scores[avatar][3]})`;
+        scores[avatar][1]++;
         robot_avatar.src = "assets/img/robot/happy.svg";
     }
-    if (n_victories+n_defeats == 0) {victory_ratio.textContent = "Vous n'avez pas encore gagné ni perdu contre le robot";}
-    else {victory_ratio.textContent = `Vous avez un taux de ${(n_victories/(n_victories+n_defeats)*100).toFixed(3)}% de victoires (${n_victories} victoires et ${n_defeats} défaites)`;}
+    if (scores[avatar][0]+scores[avatar][1] == 0) {victory_ratio.textContent = "Vous n'avez pas encore gagné ni perdu contre le robot";}
+    else {victory_ratio.textContent = `Vous avez un taux de ${(scores[avatar][0]/(scores[avatar][0]+scores[avatar][1])*100).toFixed(3)}% de victoires (${scores[avatar][0]} victoires et ${scores[avatar][1]} défaites)`;}
 }
 
 getData();
 
 window.addEventListener("load", () => {
-    localStorage.setItem("screen", "1");
+    screen = 1;
     resize();
     document.getElementById("player-avatar").src = `assets/img/player/${avatar}.svg`;
+    updateRobotAvatar();
     updateGameIndicators();
     startRandomize();
-    updateRobotAvatar();
     window.addEventListener("resize", resize);
     rematch_button.addEventListener("click", () => {
         fadeOutElement(end_area);
-        startNewGame();
+        updateRobotAvatar();
+        updateGameIndicators();
+        startRandomize();
+    })
+    document.getElementById("open-ranking").addEventListener("click", () => {
+        computeRanking();
+        fadeInElement(ranking_area);
+        resizeRanking();
     })
 });
 window.addEventListener("unload", saveData);
