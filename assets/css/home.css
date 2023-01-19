@@ -1,0 +1,34 @@
+h1 {
+    -webkit-text-stroke: 1px var(--black);
+}
+
+.responses {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar-bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+    margin-bottom: -50px;
+    /* padding-top: var(--spacing); */
+    /* padding-bottom: 70px; */
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    height: 0px;
+    overflow: hidden;
+}
+
+@keyframes deploy {
+    from {height: 0px;}
+    to {height: 350px;}
+}
+
+@keyframes retract {
+    from {height: 350px;}
+    to {height: 0px;}
+}

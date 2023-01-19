@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:#007272;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st2{stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st3{fill:#FF0000;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st4{stroke:#000000;stroke-width:10.0002;stroke-miterlimit:10.0002;}
+	.st5{fill:#7F7F7F;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st7{fill:#007272;}
+</style>
+<g id="Head">
+	<polygon id="Structure" class="st0" points="215.3,112.9 572.5,112.9 608.2,148.6 608.2,398.6 572.5,434.3 215.3,434.3 
+		179.6,398.6 179.6,148.6 	"/>
+	<polygon id="Top_plate" class="st1" points="301.8,112.9 337.5,148.6 444.6,148.6 480.3,112.9 	"/>
+	<polygon id="Left_plate" class="st1" points="608.2,184.3 643.9,220 643.9,327.1 608.2,362.9 	"/>
+	<polygon id="Right_plate" class="st1" points="179.6,184.3 143.9,220 143.9,327.1 179.6,362.9 	"/>
+	<polygon id="Left_antenna" class="st2" points="166.8,197.1 165.3,77.1 259.6,77.4 259.6,102.1 229.6,102.1 229.6,92.1 179.6,92.1 
+		179.6,184.3 	"/>
+	<polygon id="Right_antenna" class="st2" points="621,197.1 622.1,112.9 604.2,94.6 643.9,42.9 626.1,27.9 605.3,52.4 614.9,59.6 
+		585.9,97.3 608.2,122.9 608.2,184.3 	"/>
+	<g id="Left_eye">
+		<path class="st3" d="M298.2,302.3c-28.6,0-28.6-28.6-28.6-28.6v-50c0,0,0-55.6,28.6-28.6c28.6,28.6,28.6,28.6,28.6,28.6v50
+			C326.8,273.7,326.8,302.3,298.2,302.3z"/>
+		<circle class="st2" cx="305.3" cy="273.6" r="21.4"/>
+	</g>
+	<g id="Right_eye">
+		<path class="st3" d="M483.9,302.3c-28.6,0-28.6-28.6-28.6-28.6v-50c0,0,0,0,28.6-28.6c28.6-29.3,28.6,28.6,28.6,28.6v50
+			C512.5,273.7,512.5,302.3,483.9,302.3z"/>
+		
+			<ellipse transform="matrix(0.3162 -0.9487 0.9487 0.3162 76.1761 652.8878)" class="st4" cx="491" cy="273.6" rx="21.4" ry="21.4"/>
+	</g>
+	<g id="Mouth">
+		<path id="Outline" class="st5" d="M293.9,380.7c0-20,16.7-20,16.7-20h166.7c0,0,16.7,0,16.7,20s-16.7,20-16.7,20H310.6
+			C310.6,400.7,293.9,400.7,293.9,380.7z"/>
+		<line class="st6" x1="313.9" y1="360.7" x2="313.9" y2="400.7"/>
+		<line class="st6" x1="333.9" y1="360.7" x2="333.9" y2="400.7"/>
+		<line class="st6" x1="353.9" y1="360.7" x2="353.9" y2="400.7"/>
+		<line class="st6" x1="373.9" y1="360.7" x2="373.9" y2="400.7"/>
+		<line class="st6" x1="393.9" y1="360.7" x2="393.9" y2="400.7"/>
+		<line class="st6" x1="413.9" y1="360.7" x2="413.9" y2="400.7"/>
+		<line class="st6" x1="433.9" y1="360.7" x2="433.9" y2="400.7"/>
+		<line class="st6" x1="453.9" y1="360.7" x2="453.9" y2="400.7"/>
+		<line class="st6" x1="473.9" y1="360.7" x2="473.9" y2="400.7"/>
+	</g>
+	<path class="st6" d="M492.4,400.7"/>
+	<path class="st6" d="M492.4,360.7"/>
+</g>
+<rect id="Neck" x="283.9" y="434.3" class="st2" width="214.3" height="60"/>
+<g id="Body">
+	<polygon id="Left_arm" class="st0" points="111.9,589.3 104.6,815.7 179.6,815.7 247.4,589.3 	"/>
+	<polygon id="Right_arm" class="st0" points="675.9,589.3 683.2,815.7 608.2,815.7 540.4,589.3 	"/>
+	<circle id="Left_shoulder" class="st2" cx="179.6" cy="557.1" r="75"/>
+	<circle id="Right_shoulder" class="st2" cx="608.2" cy="557.1" r="75"/>
+	<polygon id="Structure_00000013186160108262843000000008998097759326190470_" class="st0" points="215.3,494.3 572.5,494.3 
+		608.2,530 608.2,630 588.2,680 558.2,815.7 229.6,815.7 199.6,680 179.6,630 179.6,530 	"/>
+	<g id="Body_plate">
+		<ellipse class="st7" cx="393.9" cy="650.6" rx="70" ry="70"/>
+		<path d="M393.9,585.6c35.8,0,65,29.2,65,65s-29.2,65-65,65s-65-29.2-65-65S358.1,585.6,393.9,585.6 M393.9,575.6
+			c-41.4,0-75,33.6-75,75s33.6,75,75,75s75-33.6,75-75S435.3,575.6,393.9,575.6L393.9,575.6z"/>
+	</g>
+	<path d="M179.6,630l129.3,10c0,0,0.4,95.7,85,95.6s85-93.4,85-93.4l129.3-10l-5,10.4l-114.2,9c0,0-9.9,93.9-95.1,93.9
+		S298.8,649,298.8,649l-115-8.7L179.6,630z"/>
+</g>
+<line class="st6" x1="221.9" y1="795" x2="560" y2="795"/>
+<line class="st6" x1="102" y1="795" x2="183" y2="795"/>
+<line class="st6" x1="599.1" y1="795" x2="680.1" y2="795"/>
+</svg>

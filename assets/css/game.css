@@ -1,0 +1,83 @@
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {width: var(--circle-size);}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.robot-choice {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+    transform: translateY(-850px);
+    transition: all 0s;
+}
+
+@media screen and (max-width: 699px) {
+    .play-area {
+        display: grid;
+        grid-template-areas:
+            "l r"
+            "t t";
+        row-gap: var(--spacing);
+    }
+
+    .choices-area {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--transparent-grey);
+    }
+
+    .choices-area div {
+        position: absolute;
+    }
+
+    .player-left {grid-area: l;}
+    .player-right {grid-area: r;}
+
+    .table {
+        width: 80vw;
+        height: 50vh;
+        grid-area: t;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .play-area, .choices-area {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing);
+    }
+
+    .player-left {
+        align-self: flex-start;
+    }
+
+    .player-right {
+        align-self: flex-end;
+    }
+
+    .table {
+        width: 55vw;
+        height: 50vh;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .table {
+        width: 60vw;
+        height: 60vh;
+    }
+}

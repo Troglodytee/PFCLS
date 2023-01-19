@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/css/global_layout.css" rel="stylesheet">
+    <link href="assets/css/global_effects.css" rel="stylesheet">
+    <link href="assets/css/home.css" rel="stylesheet">
+
+    <script src="assets/js/sounds.js" async></script>
+    <script src="assets/js/constants.js" async></script>
+    <script src="assets/js/local_storage.js" async></script>
+    <script src="assets/js/tools.js" async></script>
+    <script src="assets/js/rules.js" async></script>
+    <script src="assets/js/home.js" async></script>
+
+    <title>PFCLS</title>
+</head>
+
+<body>
+    <main class="fullscreen center-all bg-yellow">
+        <div id="delete-button" class="top-left-button small-circle border border-black bg-white clickable">
+            <img class="w-100" src="assets/img/trash.svg">
+        </div>
+        <div id="rules-button" class="top-right-button small-circle border border-black bg-white clickable">
+            <img class="w-100" src="assets/img/rules.svg">
+        </div>
+        <div class="bottom-right-button">
+            <div id="avatar-bar" class="avatar-bar border border-black bg-white">
+                <div class="small-circle border border-black bg-white clickable">
+                    <img class="w-100" src="assets/img/player/sheldon.svg">
+                </div>
+                <div class="small-circle border border-black bg-white clickable">
+                    <img class="w-100" src="assets/img/player/leonard.svg">
+                </div>
+                <div class="small-circle border border-black bg-white clickable">
+                    <img class="w-100" src="assets/img/player/howard.svg">
+                </div>
+                <div class="small-circle border border-black bg-white clickable">
+                    <img class="w-100" src="assets/img/player/raj.svg">
+                </div>
+            </div>
+            <div id="avatar-button" class="circle border border-black bg-white clickable over-all">
+                <img id="player-avatar" class="w-100" src="assets/img/player/sheldon.svg">
+            </div>
+        </div>
+        <div class="text-center">
+            <h1 class="fs-xxl text-white">THE BiG BANG THEORY</h1>
+            <p class="fs-lg text-spaced text-black">Pierre Feuille Ciseaux Lézard Spock</p>
+        </div>
+        <a id="continue-button" class="button bg-green fs-lg text-white" href="game.html">Continuer</a>
+        <a id="new-button" class="button bg-red fs-lg text-white" href="game.html">Nouvelle partie</a>
+        <div id="popup-valid-delete" class="popup fullscreen center-all">
+            <div class="popup-message bg-beige">
+                <p class="fs-md text-center text-black">Voulez-vous vraiment supprimer votre sauvegarde ?</p>
+                <div class="responses">
+                    <a id="valid-delete" class="button bg-green fs-md text-white clickable">Oui</a>
+                    <a id="cancel-delete" class="button bg-red fs-md text-white clickable">Non</a>
+                </div>
+            </div>
+        </div>
+        <div id="rules-area" class="popup fullscreen center-all">
+            <div class="rules-area popup-message bg-beige">
+                <img id="rules-close" class="close-button clickable" src="assets/img/cross.svg">
+                <div class="col">
+                    <div class="row">
+                        <img src="assets/img/symbols/rock.svg" class="symbol">
+                        <p class="fs-md text-black">Pierre</p>
+                        <div class="text-black">
+                            <p>La pierre écrase le lézard.</p>
+                            <p>La pierre écrase les ciseaux.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="assets/img/symbols/paper.svg" class="symbol">
+                        <p class="fs-md text-black">Feuille</p>
+                        <div class="text-black"">
+                            <p>La feuille recouvre la pierre.</p>
+                            <p>La feuille réfute Spock.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="assets/img/symbols/scissor.svg" class="symbol">
+                        <p class="fs-md text-black">Ciseaux</p>
+                        <div class="text-black"">
+                            <p>Les ciseaux coupent la feuille.</p>
+                            <p>Les ciseaux décapitent le lézard.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="assets/img/symbols/lizard.svg" class="symbol">
+                        <p class="fs-md text-black">Lézard</p>
+                        <div class="text-black"">
+                            <p>Le lézard mange la feuille.</p>
+                            <p>Le lézard empoisonne Spock.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="assets/img/symbols/spock.svg" class="symbol">
+                        <p class="fs-md text-black">Spock</p>
+                        <div class="text-black">
+                            <p>Spock casse les ciseaux.</p>
+                            <p>Spock vaporise la pierre.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="w-100" src="assets/img/schema.svg">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

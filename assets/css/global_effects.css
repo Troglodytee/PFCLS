@@ -1,0 +1,23 @@
+:root {
+    --beige:  #fad797;
+    --black:  #000000;
+    --brown:  #8f5e05;
+    --green:  #23c223;
+    --red:    #df1313;
+    --white:  #ffffff;
+    --yellow: #ffc400;
+    --transparent-grey: #00000088;
+}
+
+.bg-beige  {background-color: var(--beige);}
+.bg-black  {background-color: var(--black);}
+.bg-brown  {background-color: var(--brown);}
+.bg-green  {background-color: var(--green);}
+.bg-red    {background-color: var(--red);}
+.bg-white  {background-color: var(--white);}
+.bg-yellow {background-color: var(--yellow);}
+
+.border-black {border-color: var(--black);}
+
+.text-black {color: var(--black);}
+.text-white {color: var(--white);}
