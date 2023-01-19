@@ -77,12 +77,14 @@ function fight(choosen, placeholder, choosen2) {
         player_symbol.style.top = rect.top+"px";
         player_symbol.style.left = rect.left+"px";
         player_symbol.style.width = BIG_CIRCLE_SIZE+"px";
+        player_symbol.style.zIndex = "300";
         document.body.append(player_symbol);
         rect = robot_choice.parentElement.getBoundingClientRect();
         robot_symbol.style.position = "absolute";
         robot_symbol.style.top = (rect.top+SPACING)+"px";
         robot_symbol.style.left = (rect.left+SPACING)+"px";
         robot_symbol.style.width = BIG_CIRCLE_SIZE+"px";
+        robot_symbol.style.zIndex = "300";
         document.body.append(robot_symbol);
         choosen.style.display = "none";
         robot_choice.style.display = "none";
@@ -108,6 +110,7 @@ function fight(choosen, placeholder, choosen2) {
             left_sword.style.position = "absolute";
             left_sword.style.top = "-200px";
             left_sword.style.left = "-200px";
+            left_sword.style.zIndex = "300";
             img.style.transformOrigin = "bottom right";
             left_sword.append(img);
             let right_sword = document.createElement("div");
@@ -122,6 +125,7 @@ function fight(choosen, placeholder, choosen2) {
             right_sword.style.position = "absolute";
             right_sword.style.top = "-200px";
             right_sword.style.right = "-200px";
+            right_sword.style.zIndex = "300";
             img.style.transformOrigin = "bottom left";
             right_sword.append(img);
             document.body.append(left_sword, right_sword);
