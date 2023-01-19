@@ -28,11 +28,17 @@ function updateSounds() {
     else {sounds_button.src = "assets/img/sounds/sounds-off.svg";}
 }
 
+function playSound(name) {
+    sounds_object.src = `assets/sounds/${name}.mp3`;
+    sounds_object.play();
+}
+
 const music_button = document.getElementById("music-button");
 const sounds_button = document.getElementById("sounds-button");
 
 var music_object = document.createElement("audio");
 music_object.autoplay = true;
+var sounds_object = document.createElement("audio");
 
 
 window.addEventListener("load", () => {

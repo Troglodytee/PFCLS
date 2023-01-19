@@ -45,19 +45,6 @@ function winOrLoose(player, robot) {
     else {return null;}
 }
 
-function moveTo(objects, n) {
-    if (n > 0) {
-        for (i of objects) {
-            let rect = i[0].getBoundingClientRect();
-            let diff_x = i[2]-rect.left;
-            let diff_y = i[1]-rect.top;
-            i[0].style.top = (rect.top+diff_y/n)+"px";
-            i[0].style.left = (rect.left+diff_x/n)+"px";
-        }
-        setTimeout(() => {moveTo(objects, n-1);}, 30);
-    }
-}
-
 function rotateToCenter(left_sword, right_sword, n, i) {
     if (i > 0) {
         let rect = left_sword.getBoundingClientRect();
@@ -76,27 +63,11 @@ function rotateToCenter(left_sword, right_sword, n, i) {
     }
 }
 
-function attack(attacker, victim, n) {
-    if (n > 0) {
-        let rect = attacker.getBoundingClientRect();
-        let rect2 = victim.getBoundingClientRect();
-        attacker.style.left = (rect.left+(rect2.left-rect.left)/n)+"px";
-        setTimeout(() => {attack(attacker, victim, n-1)}, 20);
-    }
-}
-
-function fall(symbol, n) {
-    if (n > 0) {
-        let rect = symbol.getBoundingClientRect();
-        symbol.style.top = (rect.top+(window.innerHeight-rect.top)/n)+"px";
-        setTimeout(() => {fall(symbol, n-1)}, 20);
-    }
-}
-
 function fight(choosen, placeholder, choosen2) {
     if (robot_thinking == 6) {
         let player_symbol = choosen.cloneNode();
         let robot_symbol = robot_choice.children[5-choosen2].cloneNode();
+        robot_symbol.id = symbols[choosen2];
 
         let rect = choosen.getBoundingClientRect();
         player_symbol.style.position = "absolute";
@@ -115,13 +86,14 @@ function fight(choosen, placeholder, choosen2) {
         choosen.style.display = "none";
         robot_choice.style.display = "none";
 
+        let n_frames = 20;
         fadeInElement(fight_bg);
         moveTo(
             [
                 [player_symbol, (window.innerHeight-BIG_CIRCLE_SIZE)/2, 20],
                 [robot_symbol, (window.innerHeight-BIG_CIRCLE_SIZE)/2, window.innerWidth-20-BIG_CIRCLE_SIZE],
             ],
-            15
+            n_frames
         );
         setTimeout(() => {
             let left_sword = document.createElement("div");
@@ -163,21 +135,66 @@ function fight(choosen, placeholder, choosen2) {
                     win = winOrLoose(choosen.id, symbols[choosen2]);
                     let wait;
                     if (win === null) {
-                        fall(player_symbol, 20);
-                        fall(robot_symbol, 20);
-                        wait = 600;
+                        fall(player_symbol, n_frames);
+                        fall(robot_symbol, n_frames);
+                        wait = ANIMATION_FRAME_DURATION*n_frames;
                     }
                     else {
                         wait = 1000;
+                        let attacker;
+                        let victim;
                         if (win) {
+                            attacker = player_symbol;
+                            victim = robot_symbol;
                             player_score++;
-                            attack(player_symbol, robot_symbol, 20);
-                            setTimeout(() => {fall(robot_symbol, 20);}, 400)
                         }
                         else {
+                            attacker = robot_symbol;
+                            victim = player_symbol;
                             robot_score++;
-                            attack(robot_symbol, player_symbol, 20);
-                            setTimeout(() => {fall(player_symbol, 20);}, 400)
+                        }
+                        wait = ANIMATION_FRAME_DURATION*n_frames;
+                        if (attacker.id == "rock") {
+                            jump(attacker, victim, n_frames);
+                            setTimeout(() => {
+                                playSound(`${attacker.id}-${victim.id}`);
+                                fall(victim, n_frames);
+                            }, wait);
+                            wait *= 2;
+                        }
+                        else if (attacker.id == "paper") {
+                            wait /= 2;
+                            slip(attacker, victim, n_frames);
+                            if (victim.id == "spock") {
+                                setTimeout(() => {
+                                    playSound(`${attacker.id}-${victim.id}`);
+                                    pushBack(victim, win, n_frames/2);
+                                }, wait);
+                            }
+                            else {playSound(`${attacker.id}-${victim.id}`);}
+                            wait *= 2;
+                        }
+                        else if (attacker.id == "scissor") {
+                            if (win) {rotation(attacker, 90, n_frames, n_frames);}
+                            else {rotation(attacker, -90, n_frames, n_frames);}
+                            setTimeout(() => {
+                                playSound(`${attacker.id}-${victim.id}`);
+                                slip(attacker, victim, n_frames);
+                            }, wait);
+                            wait *= 2;
+                        }
+                        else if (attacker.id == "lizard") {
+                            slip(attacker, victim, n_frames);
+                            setTimeout(() => {playSound(`${attacker.id}-${victim.id}`);}, wait);
+                            if (victim.id == "spock") {
+                                setTimeout(() => {fadeOutElement(victim);}, wait);
+                                wait += FADE_DURATION;
+                            }
+                        }
+                        else if (attacker.id == "spock") {
+                            playSound(`${attacker.id}-${victim.id}`);
+                            fadeOutElement(victim);
+                            wait = FADE_DURATION;
                         }
                     }
                     setTimeout(() => {
@@ -203,11 +220,11 @@ function fight(choosen, placeholder, choosen2) {
                             player_choice.append(placeholder);
                             document.getElementById(id).style.display = "block";
                             robot_choice.style.display = "flex";
-                        }, 200);
-                    }, wait);
-                }, 200);
+                        }, FADE_DURATION);
+                    }, wait+200);
+                }, FADE_DURATION);
             }, 600);
-        }, 500);
+        }, ANIMATION_FRAME_DURATION*n_frames);
     }
     else {setTimeout(() => {fight(choosen, placeholder, choosen2)}, 100);}
 }
